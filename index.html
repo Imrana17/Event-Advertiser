@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VintageCon 2023 - Premier Wine Industry Conference</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --wine: #722f37;
+            --dark-wine: #5a252c;
+            --light-pink: #f9e6e9;
+            --black: #1a1a1a;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--black);
+        }
+        
+        .navbar {
+            background-color: var(--black);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--white);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--wine);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: 1px solid var(--wine);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28114, 47, 55, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .btn-primary {
+            background-color: var(--wine);
+            border-color: var(--wine);
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-wine);
+            border-color: var(--dark-wine);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--wine);
+            border-color: var(--wine);
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--wine);
+            border-color: var(--wine);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 8rem 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--wine);
+            margin: 15px auto;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            color: var(--wine);
+            font-weight: 600;
+        }
+        
+        .speaker-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .schedule-day {
+            background-color: var(--light-pink);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .schedule-item {
+            border-left: 3px solid var(--wine);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .schedule-time {
+            color: var(--wine);
+            font-weight: 600;
+        }
+        
+        .venue-map {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .gallery-item {
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.3s;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .contact-info {
+            background-color: var(--light-pink);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        
+        .social-icon {
+            color: var(--wine);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--dark-wine);
+        }
+        
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--wine);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">VintageCon 2023</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registration">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#venue">Venue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">VintageCon 2023</h1>
+            <p class="lead mb-4">The Premier Wine Industry Conference</p>
+            <p class="h4 mb-5">November 15-17, 2023 | Napa Valley, California</p>
+            <a href="#registration" class="btn btn-primary btn-lg px-5 py-3">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Welcome to VintageCon</h2>
+                    <p class="lead">Join industry leaders, winemakers, sommeliers, and enthusiasts for three days of education, networking, and celebration of the wine industry.</p>
+                    <p>VintageCon brings together the brightest minds in viticulture, oenology, and wine business to share insights, trends, and innovations shaping the future of wine. Whether you're a seasoned professional or new to the industry, you'll find valuable connections and knowledge at this premier event.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">About VintageCon</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Our History</h3>
+                    <p>Founded in 2010, VintageCon has grown from a small gathering of local winemakers to an internationally recognized conference attracting attendees from over 30 countries. Our mission has always been to foster education, innovation, and community within the wine industry.</p>
+                    <p>Each year, we curate a program that balances traditional techniques with cutting-edge advancements, ensuring our attendees stay at the forefront of the industry.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>2023 Highlights</h3>
+                    <ul>
+                        <li>Keynote presentations from industry pioneers</li>
+                        <li>Technical workshops on viticulture and winemaking</li>
+                        <li>Business strategy sessions for wine brands</li>
+                        <li>Networking events with producers and distributors</li>
+                        <li>Grand tasting featuring over 200 wines</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <h3 class="text-center mb-4">Organizers</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Eleanor Bennett</h4>
+                        <p>Conference Chair</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Marcus Johnson</h4>
+                        <p>Program Director</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Sophia Rivera</h4>
+                        <p>Partnership Coordinator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Conference Schedule</h2>
+            
+            <ul class="nav nav-tabs justify-content-center mb-4" id="scheduleTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="day1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab">Day 1</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="day2-tab" data-bs-toggle="tab" data-bs-target="#day2" type="button" role="tab">Day 2</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="day3-tab" data-bs-toggle="tab" data-bs-target="#day3" type="button" role="tab">Day 3</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="scheduleTabsContent">
+                <div class="tab-pane fade show active" id="day1" role="tabpanel">
+                    <div class="schedule-day">
+                        <h3 class="text-center mb-4">November 15, 2023</h3>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:00 AM - 10:00 AM</div>
+                            <h4>Registration & Welcome Coffee</h4>
+                            <p>Main Lobby</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">10:00 AM - 11:30 AM</div>
+                            <h4>Opening Keynote: The Future of Winemaking</h4>
+                            <p>Dr. Isabelle Laurent | Grand Ballroom</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">1:00 PM - 2:30 PM</div>
+                            <h4>Sustainable Viticulture Practices</h4>
+                            <p>Panel Discussion | Room A</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">3:00 PM - 5:00 PM</div>
+                            <h4>Wine Tasting Workshop: Old World vs New World</h4>
+                            <p>Master Sommelier James Peterson | Tasting Room</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="day2" role="tabpanel">
+                    <div class="schedule-day">
+                        <h3 class="text-center mb-4">November 16, 2023</h3>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:00 AM - 10:30 AM</div>
+                            <h4>Wine Marketing in the Digital Age</h4>
+                            <p>Sarah Johnson | Grand Ballroom</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">11:00 AM - 12:30 PM</div>
+                            <h4>Vineyard Management Techniques</h4>
+                            <p>Michael Rodriguez | Room B</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">2:00 PM - 4:00 PM</div>
+                            <h4>Wine and Food Pairing Masterclass</h4>
+                            <p>Chef Elena Martinez | Tasting Room</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">5:00 PM - 7:00 PM</div>
+                            <h4>Networking Reception</h4>
+                            <p>Terrace Garden</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="day3" role="tabpanel">
+                    <div class="schedule-day">
+                        <h3 class="text-center mb-4">November 17, 2023</h3>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:30 AM - 11:00 AM</div>
+                            <h4>Global Wine Trends</h4>
+                            <p>Panel Discussion | Grand Ballroom</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">11:30 AM - 1:00 PM</div>
+                            <h4>Organic and Biodynamic Winemaking</h4>
+                            <p>David Wilson | Room A</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">2:00 PM - 4:00 PM</div>
+                            <h4>Closing Keynote: The Next Decade in Wine</h4>
+                            <p>Isabella Rossi | Grand Ballroom</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">5:00 PM - 8:00 PM</div>
+                            <h4>Grand Tasting & Farewell Party</h4>
+                            <p>Main Hall</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Speakers</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <div class="card-body">
+                            <h3 class="card-title">Dr. Isabelle Laurent</h3>
+                            <p class="card-text">Director of Oenology, Vineyard Research Institute</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <div class="card-body">
+                            <h3 class="card-title">James Peterson</h3>
+                            <p class="card-text">Master Sommelier, Author of "Wine Traditions"</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <div class="card-body">
+                            <h3 class="card-title">Maria Rodriguez</h3>
+                            <p class="card-text">Vineyard Director, TerraVines Estate</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All Speakers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Register Now</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="ticketType" class="form-label">Ticket Type</label>
+                                    <select class="form-select" id="ticketType" required>
+                                        <option value="">Select ticket type</option>
+                                        <option value="full">Full Conference Pass - $599</option>
+                                        <option value="day1">Day 1 Only - $249</option>
+                                        <option value="day2">Day 2 Only - $249</option>
+                                        <option value="day3">Day 3 Only - $249</option>
+                                        <option value="student">Student Pass - $299</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">Subscribe to our newsletter</label>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary px-5">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Conference Venue</h2>
+            
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h3>Napa Valley Conference Center</h3>
+                    <p>1234 Vineyard Avenue, Napa, California 94558</p>
+                    <p>The Napa Valley Conference Center is a state-of-the-art facility located in the heart of California's premier wine region. With panoramic views of the surrounding vineyards and mountains, it provides an inspiring setting for our conference.</p>
+                    <p>The center features modern amenities, flexible meeting spaces, and easy access to local hotels, restaurants, and tasting rooms.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="venue-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100470.29550952005!2d-122.35389669999999!3d38.502465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085f6d6652f5f6b%3A0x4b3a8730c49980b1!2sNapa%20Valley%20Conference%20Center!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-center mb-4">Accommodations</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Vineyard Inn</h4>
+                            <p>0.5 miles from venue</p>
+                            <p>Special conference rate: $199/night</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Napa Valley Hotel</h4>
+                            <p>0.8 miles from venue</p>
+                            <p>Special conference rate: $229/night</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Wine Country Resort</h4>
+                            <p>1.2 miles from venue</p>
+                            <p>Special conference rate: $279/night</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Gallery</h2>
+            <p class="text-center mb-5">Take a look at moments from previous VintageCon events</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1494314671902-399b18174975?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Conference session" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wine tasting" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vineyard tour" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1587334274527-ba54f0b5a357?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Networking event" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Keynote speaker" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565689223836-06670c6d5970?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wine workshop" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Us</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions about VintageCon 2023? We're here to help!</p>
+                        
+                        <div class="mb-3">
+                            <h4><i class="fas fa-envelope me-2"></i> Email</h4>
+                            <p>info@vintagecon.com</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h4><i class="fas fa-phone me-2"></i> Phone</h4>
+                            <p>+1 (707) 123-4567</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h4>Follow Us</h4>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4">Send a Message</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3>VintageCon 2023</h3>
+                    <p>November 15-17, 2023<br>Napa Valley Conference Center<br>Napa, California</p>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#schedule" class="text-white">Schedule</a></li>
+                        <li><a href="#speakers" class="text-white">Speakers</a></li>
+                        <li><a href="#registration" class="text-white">Registration</a></li>
+                        <li><a href="#venue" class="text-white">Venue</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h3>Stay Connected</h3>
+                    <div class="mb-3">
+                        <a href="#" class="social-icon text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                    
+                    <p>Subscribe to our newsletter for updates</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="text-center">
+                <p>&copy; 2023 VintageCon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
