@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VintageCon 2023 - Premier Wine Industry Conference</title>
+    <title>Hackaton 2026 - MIT's Premier Coding Event</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --wine: #722f37;
-            --dark-wine: #5a252c;
-            --light-pink: #f9e6e9;
+            --hack-blue: #2a56a7;
+            --dark-blue: #1a3c7a;
+            --light-blue: #e6eeff;
             --black: #1a1a1a;
             --white: #ffffff;
+            --accent: #ff6b35;
         }
         
         body {
@@ -52,7 +53,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--wine);
+            background-color: var(--hack-blue);
             transition: width 0.3s;
         }
         
@@ -61,42 +62,42 @@
         }
         
         .navbar-toggler {
-            border: 1px solid var(--wine);
+            border: 1px solid var(--hack-blue);
         }
         
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28114, 47, 55, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2842, 86, 167, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
         .btn-primary {
-            background-color: var(--wine);
-            border-color: var(--wine);
+            background-color: var(--hack-blue);
+            border-color: var(--hack-blue);
             transition: all 0.3s;
         }
         
         .btn-primary:hover {
-            background-color: var(--dark-wine);
-            border-color: var(--dark-wine);
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .btn-outline-primary {
-            color: var(--wine);
-            border-color: var(--wine);
+            color: var(--hack-blue);
+            border-color: var(--hack-blue);
             transition: all 0.3s;
         }
         
         .btn-outline-primary:hover {
-            background-color: var(--wine);
-            border-color: var(--wine);
+            background-color: var(--hack-blue);
+            border-color: var(--hack-blue);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1520&q=80') no-repeat center center;
             background-size: cover;
             color: var(--white);
             padding: 8rem 0;
@@ -114,7 +115,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--wine);
+            background: var(--hack-blue);
             margin: 15px auto;
         }
         
@@ -132,30 +133,30 @@
         }
         
         .card-title {
-            color: var(--wine);
+            color: var(--hack-blue);
             font-weight: 600;
         }
         
         .speaker-img {
-            height: 250px;
-            object-fit: cover;
+            height: 320px;
+            object-fit: fill;
         }
         
         .schedule-day {
-            background-color: var(--light-pink);
+            background-color: var(--light-blue);
             border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 2rem;
         }
         
         .schedule-item {
-            border-left: 3px solid var(--wine);
+            border-left: 3px solid var(--hack-blue);
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
         
         .schedule-time {
-            color: var(--wine);
+            color: var(--hack-blue);
             font-weight: 600;
         }
         
@@ -175,8 +176,8 @@
         .gallery-item img {
             transition: transform 0.3s;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 300px;
+            object-fit: fill;
         }
         
         .gallery-item:hover img {
@@ -184,20 +185,20 @@
         }
         
         .contact-info {
-            background-color: var(--light-pink);
+            background-color: var(--light-blue);
             border-radius: 10px;
             padding: 2rem;
         }
         
         .social-icon {
-            color: var(--wine);
+            color: var(--hack-blue);
             font-size: 1.5rem;
             margin-right: 1rem;
             transition: color 0.3s;
         }
         
         .social-icon:hover {
-            color: var(--dark-wine);
+            color: var(--dark-blue);
         }
         
         footer {
@@ -210,7 +211,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--wine);
+            background-color: var(--hack-blue);
             color: var(--white);
             width: 40px;
             height: 40px;
@@ -227,13 +228,48 @@
         .back-to-top.show {
             opacity: 1;
         }
+        
+        /* Fix for schedule tabs hover */
+        .nav-tabs .nav-link {
+            margin-bottom: 0;
+            border: none;
+            color: var(--black);
+            position: relative;
+        }
+        
+        .nav-tabs .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--hack-blue);
+            transition: width 0.3s;
+        }
+        
+        .nav-tabs .nav-link:hover::after,
+        .nav-tabs .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-tabs .nav-link:hover,
+        .nav-tabs .nav-link.active {
+            color: var(--hack-blue);
+            background-color: transparent;
+            border: none;
+        }
+        
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">VintageCon 2023</a>
+            <a class="navbar-brand" href="#">Hackaton 2026</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -255,9 +291,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-3">VintageCon 2023</h1>
-            <p class="lead mb-4">The Premier Wine Industry Conference</p>
-            <p class="h4 mb-5">November 15-17, 2023 | Napa Valley, California</p>
+            <h1 class="display-3 fw-bold mb-3">Hackaton 2026</h1>
+            <p class="lead mb-4">MIT's Premier Coding & Innovation Event</p>
+            <p class="h4 mb-5">March 20-22, 2026 | Massachusetts Institute of Technology</p>
             <a href="#registration" class="btn btn-primary btn-lg px-5 py-3">Register Now</a>
         </div>
     </section>
@@ -267,9 +303,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="section-title">Welcome to VintageCon</h2>
-                    <p class="lead">Join industry leaders, winemakers, sommeliers, and enthusiasts for three days of education, networking, and celebration of the wine industry.</p>
-                    <p>VintageCon brings together the brightest minds in viticulture, oenology, and wine business to share insights, trends, and innovations shaping the future of wine. Whether you're a seasoned professional or new to the industry, you'll find valuable connections and knowledge at this premier event.</p>
+                    <h2 class="section-title">Welcome to Hackaton 2026</h2>
+                    <p class="lead">Join top coders, developers, YouTubers, and tech innovators for three days of coding, collaboration, and cutting-edge technology.</p>
+                    <p>Hackaton 2026 brings together the brightest minds in programming, AI, web development, and technology to solve real-world problems, share knowledge, and create innovative solutions. Whether you're a seasoned developer or just starting your coding journey, you'll find inspiration and community at this premier event.</p>
                 </div>
             </div>
         </div>
@@ -278,21 +314,22 @@
     <!-- About Section -->
     <section id="about" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">About VintageCon</h2>
+            <h2 class="section-title text-center">About Hackaton</h2>
             <div class="row">
                 <div class="col-lg-6">
                     <h3>Our History</h3>
-                    <p>Founded in 2010, VintageCon has grown from a small gathering of local winemakers to an internationally recognized conference attracting attendees from over 30 countries. Our mission has always been to foster education, innovation, and community within the wine industry.</p>
-                    <p>Each year, we curate a program that balances traditional techniques with cutting-edge advancements, ensuring our attendees stay at the forefront of the industry.</p>
+                    <p>Founded in 2015, Hackaton has grown from a small MIT student event to an internationally recognized gathering attracting participants from over 50 countries. Our mission has always been to foster innovation, collaboration, and learning within the tech community.</p>
+                    <p>Each year, we challenge participants to push the boundaries of technology, working together to create solutions that make a difference in the world.</p>
                 </div>
                 <div class="col-lg-6">
-                    <h3>2023 Highlights</h3>
+                    <h3>2026 Highlights</h3>
                     <ul>
-                        <li>Keynote presentations from industry pioneers</li>
-                        <li>Technical workshops on viticulture and winemaking</li>
-                        <li>Business strategy sessions for wine brands</li>
-                        <li>Networking events with producers and distributors</li>
-                        <li>Grand tasting featuring over 200 wines</li>
+                        <li>Keynote presentations from tech industry leaders</li>
+                        <li>Technical workshops on AI, Web3, and cloud computing</li>
+                        <li>Coding challenges with prizes totaling $100,000</li>
+                        <li>Networking events with top tech companies</li>
+                        <li>Project showcase and demo day</li>
+                        <li>Career fair with leading tech companies</li>
                     </ul>
                 </div>
             </div>
@@ -301,19 +338,19 @@
                 <h3 class="text-center mb-4">Organizers</h3>
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
-                        <h4>Eleanor Bennett</h4>
-                        <p>Conference Chair</p>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Dr. Sarah Chen</h4>
+                        <p>Director, MIT Computer Science</p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
-                        <h4>Marcus Johnson</h4>
-                        <p>Program Director</p>
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Mark Johnson</h4>
+                        <p>Tech Entrepreneur</p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
-                        <h4>Sophia Rivera</h4>
-                        <p>Partnership Coordinator</p>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Organizer" class="rounded-circle mb-3" width="150" height="150">
+                        <h4>Lisa Rodriguez</h4>
+                        <p>Hackathon Program Director</p>
                     </div>
                 </div>
             </div>
@@ -323,7 +360,7 @@
     <!-- Schedule Section -->
     <section id="schedule" class="py-5">
         <div class="container">
-            <h2 class="section-title text-center">Conference Schedule</h2>
+            <h2 class="section-title text-center">Event Schedule</h2>
             
             <ul class="nav nav-tabs justify-content-center mb-4" id="scheduleTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -340,90 +377,108 @@
             <div class="tab-content" id="scheduleTabsContent">
                 <div class="tab-pane fade show active" id="day1" role="tabpanel">
                     <div class="schedule-day">
-                        <h3 class="text-center mb-4">November 15, 2023</h3>
+                        <h3 class="text-center mb-4">March 20, 2026</h3>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">9:00 AM - 10:00 AM</div>
-                            <h4>Registration & Welcome Coffee</h4>
-                            <p>Main Lobby</p>
+                            <h4>Registration & Welcome</h4>
+                            <p>Main Lobby, MIT Building E14</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">10:00 AM - 11:30 AM</div>
-                            <h4>Opening Keynote: The Future of Winemaking</h4>
-                            <p>Dr. Isabelle Laurent | Grand Ballroom</p>
+                            <h4>Opening Keynote: The Future of Coding</h4>
+                            <p>By John Doe | Kresge Auditorium</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">1:00 PM - 2:30 PM</div>
-                            <h4>Sustainable Viticulture Practices</h4>
-                            <p>Panel Discussion | Room A</p>
+                            <h4>Team Formation & Problem Statements</h4>
+                            <p>Workshop | Room 4-237</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">3:00 PM - 5:00 PM</div>
-                            <h4>Wine Tasting Workshop: Old World vs New World</h4>
-                            <p>Master Sommelier James Peterson | Tasting Room</p>
+                            <h4>Hacking Begins</h4>
+                            <p>Main Hacking Area</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">7:00 PM - 8:30 PM</div>
+                            <h4>Tech Talk: AI in 2026</h4>
+                            <p>By Jane Smith | Room 10-250</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tab-pane fade" id="day2" role="tabpanel">
                     <div class="schedule-day">
-                        <h3 class="text-center mb-4">November 16, 2023</h3>
+                        <h3 class="text-center mb-4">March 21, 2026</h3>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">9:00 AM - 10:30 AM</div>
-                            <h4>Wine Marketing in the Digital Age</h4>
-                            <p>Sarah Johnson | Grand Ballroom</p>
+                            <h4>Morning Coding Session</h4>
+                            <p>Main Hacking Area</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">11:00 AM - 12:30 PM</div>
-                            <h4>Vineyard Management Techniques</h4>
-                            <p>Michael Rodriguez | Room B</p>
+                            <h4>Workshop: Web3 Development</h4>
+                            <p>By Alex Johnson | Room 2-135</p>
                         </div>
                         
                         <div class="schedule-item">
-                            <div class="schedule-time">2:00 PM - 4:00 PM</div>
-                            <h4>Wine and Food Pairing Masterclass</h4>
-                            <p>Chef Elena Martinez | Tasting Room</p>
+                            <div class="schedule-time">2:00 PM - 3:30 PM</div>
+                            <h4>Tech Talk: Cloud Native Applications</h4>
+                            <p>By Maria Garcia | Room 26-100</p>
                         </div>
                         
                         <div class="schedule-item">
-                            <div class="schedule-time">5:00 PM - 7:00 PM</div>
-                            <h4>Networking Reception</h4>
-                            <p>Terrace Garden</p>
+                            <div class="schedule-time">4:00 PM - 6:00 PM</div>
+                            <h4>Hacking Continues</h4>
+                            <p>Main Hacking Area</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">7:00 PM - 9:00 PM</div>
+                            <h4>Networking Dinner</h4>
+                            <p>Student Center</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tab-pane fade" id="day3" role="tabpanel">
                     <div class="schedule-day">
-                        <h3 class="text-center mb-4">November 17, 2023</h3>
+                        <h3 class="text-center mb-4">March 22, 2026</h3>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">9:30 AM - 11:00 AM</div>
-                            <h4>Global Wine Trends</h4>
-                            <p>Panel Discussion | Grand Ballroom</p>
+                            <h4>Final Hacking Sprint</h4>
+                            <p>Main Hacking Area</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">11:30 AM - 1:00 PM</div>
-                            <h4>Organic and Biodynamic Winemaking</h4>
-                            <p>David Wilson | Room A</p>
+                            <h4>Project Submission</h4>
+                            <p>Online Portal</p>
                         </div>
                         
                         <div class="schedule-item">
                             <div class="schedule-time">2:00 PM - 4:00 PM</div>
-                            <h4>Closing Keynote: The Next Decade in Wine</h4>
-                            <p>Isabella Rossi | Grand Ballroom</p>
+                            <h4>Project Demos & Judging</h4>
+                            <p>Various Rooms</p>
                         </div>
                         
                         <div class="schedule-item">
-                            <div class="schedule-time">5:00 PM - 8:00 PM</div>
-                            <h4>Grand Tasting & Farewell Party</h4>
-                            <p>Main Hall</p>
+                            <div class="schedule-time">5:00 PM - 6:30 PM</div>
+                            <h4>Closing Ceremony & Awards</h4>
+                            <p>Kresge Auditorium</p>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">7:00 PM - 9:00 PM</div>
+                            <h4>After Party</h4>
+                            <p>Student Center</p>
                         </div>
                     </div>
                 </div>
@@ -439,11 +494,27 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="card-img-top speaker-img" alt="Speaker">
                         <div class="card-body">
-                            <h3 class="card-title">Dr. Isabelle Laurent</h3>
-                            <p class="card-text">Director of Oenology, Vineyard Research Institute</p>
+                            <h3 class="card-title">John Doe</h3>
+                            <p class="card-text">Tech Giant | 2M YouTube Subscribers</p>
                             <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <div class="card-body">
+                            <h3 class="card-title">Jane Smith</h3>
+                            <p class="card-text">AI Researcher | Founder of CodeWithJane</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                             </div>
@@ -453,36 +524,23 @@
                 
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="card-img-top speaker-img" alt="Speaker">
                         <div class="card-body">
-                            <h3 class="card-title">James Peterson</h3>
-                            <p class="card-text">Master Sommelier, Author of "Wine Traditions"</p>
+                            <h3 class="card-title">Alex Johnson</h3>
+                            <p class="card-text">Full Stack Developer | Tech YouTuber</p>
                             <div class="social-links">
-                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top speaker-img" alt="Speaker">
-                        <div class="card-body">
-                            <h3 class="card-title">Maria Rodriguez</h3>
-                            <p class="card-text">Vineyard Director, TerraVines Estate</p>
-                            <div class="social-links">
-                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4">
+            <!--div class="text-center mt-4">
                 <a href="#" class="btn btn-outline-primary">View All Speakers</a>
-            </div>
+            </div-->
         </div>
     </section>
 
@@ -518,15 +576,23 @@
                                 </div>
                                 
                                 <div class="mb-3">
+                                    <label for="github" class="form-label">GitHub Username</label>
+                                    <input type="text" class="form-control" id="github">
+                                </div>
+                                
+                                <div class="mb-3">
                                     <label for="ticketType" class="form-label">Ticket Type</label>
                                     <select class="form-select" id="ticketType" required>
                                         <option value="">Select ticket type</option>
-                                        <option value="full">Full Conference Pass - $599</option>
-                                        <option value="day1">Day 1 Only - $249</option>
-                                        <option value="day2">Day 2 Only - $249</option>
-                                        <option value="day3">Day 3 Only - $249</option>
-                                        <option value="student">Student Pass - $299</option>
+                                        <option value="full">Full Event Pass - $99</option>
+                                        <option value="student">Student Pass - $49</option>
+                                        <option value="virtual">Virtual Pass - $29</option>
                                     </select>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="mlh" required>
+                                    <label class="form-check-label" for="mlh">I agree to the MLH Code of Conduct</label>
                                 </div>
                                 
                                 <div class="mb-3 form-check">
@@ -548,18 +614,18 @@
     <!-- Venue Section -->
     <section id="venue" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Conference Venue</h2>
+            <h2 class="section-title text-center">Event Venue</h2>
             
             <div class="row mb-5">
                 <div class="col-md-6">
-                    <h3>Napa Valley Conference Center</h3>
-                    <p>1234 Vineyard Avenue, Napa, California 94558</p>
-                    <p>The Napa Valley Conference Center is a state-of-the-art facility located in the heart of California's premier wine region. With panoramic views of the surrounding vineyards and mountains, it provides an inspiring setting for our conference.</p>
-                    <p>The center features modern amenities, flexible meeting spaces, and easy access to local hotels, restaurants, and tasting rooms.</p>
+                    <h3>Massachusetts Institute of Technology</h3>
+                    <p>77 Massachusetts Ave, Cambridge, MA 02139</p>
+                    <p>MIT is a world-renowned institution at the forefront of technology and innovation. The Hackaton 2026 will take place across multiple buildings on campus, including the iconic Stata Center and Media Lab complex.</p>
+                    <p>The campus features state-of-the-art facilities, collaborative spaces, and an environment designed to foster creativity and innovation.</p>
                 </div>
                 <div class="col-md-6">
                     <div class="venue-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100470.29550952005!2d-122.35389669999999!3d38.502465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085f6d6652f5f6b%3A0x4b3a8730c49980b1!2sNapa%20Valley%20Conference%20Center!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.382826227629!2d-71.0949137242661!3d42.36008247119238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e370aaf51a6a87%3A0xd0e08ea5b308203c!2sMassachusetts%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1689876543210!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -569,9 +635,9 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Vineyard Inn</h4>
-                            <p>0.5 miles from venue</p>
-                            <p>Special conference rate: $199/night</p>
+                            <h4 class="card-title">Kendall Hotel</h4>
+                            <p>0.3 miles from campus</p>
+                            <p>Special event rate: $199/night</p>
                         </div>
                     </div>
                 </div>
@@ -579,9 +645,9 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Napa Valley Hotel</h4>
-                            <p>0.8 miles from venue</p>
-                            <p>Special conference rate: $229/night</p>
+                            <h4 class="card-title">Boston Marriott Cambridge</h4>
+                            <p>0.7 miles from campus</p>
+                            <p>Special event rate: $229/night</p>
                         </div>
                     </div>
                 </div>
@@ -589,9 +655,9 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Wine Country Resort</h4>
-                            <p>1.2 miles from venue</p>
-                            <p>Special conference rate: $279/night</p>
+                            <h4 class="card-title">The Royal Sonesta</h4>
+                            <p>1.1 miles from campus</p>
+                            <p>Special event rate: $249/night</p>
                         </div>
                     </div>
                 </div>
@@ -603,42 +669,42 @@
     <section id="gallery" class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Gallery</h2>
-            <p class="text-center mb-5">Take a look at moments from previous VintageCon events</p>
+            <p class="text-center mb-5">Take a look at moments from previous Hackaton events</p>
             
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1494314671902-399b18174975?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Conference session" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Coding session" class="img-fluid rounded">
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wine tasting" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team collaboration" class="img-fluid rounded">
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vineyard tour" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Workshop" class="img-fluid rounded">
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1587334274527-ba54f0b5a357?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Networking event" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Presentation" class="img-fluid rounded">
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Keynote speaker" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Keynote speaker" class="img-fluid rounded">
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1565689223836-06670c6d5970?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wine workshop" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Networking event" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -654,24 +720,25 @@
                 <div class="col-lg-6 mb-4">
                     <div class="contact-info">
                         <h3>Get in Touch</h3>
-                        <p>Have questions about VintageCon 2023? We're here to help!</p>
+                        <p>Have questions about Hackaton 2026? We're here to help!</p>
                         
                         <div class="mb-3">
                             <h4><i class="fas fa-envelope me-2"></i> Email</h4>
-                            <p>info@vintagecon.com</p>
+                            <p>imranasalis17@gmail.com</p>
                         </div>
                         
                         <div class="mb-3">
                             <h4><i class="fas fa-phone me-2"></i> Phone</h4>
-                            <p>+1 (707) 123-4567</p>
+                            <p>+233544626869</p>
                         </div>
                         
                         <div class="mb-3">
                             <h4>Follow Us</h4>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://x.com/imranasalis" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61569568473599&sk=about_overview&viewas=100000686899395" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/imrana.salis/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="http://www.linkedin.com/in/imrana-salis-a672a333b" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Imrana17" class="social-icon"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -712,8 +779,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h3>VintageCon 2023</h3>
-                    <p>November 15-17, 2023<br>Napa Valley Conference Center<br>Napa, California</p>
+                    <h3>Hackaton 2026</h3>
+                    <p>March 20-22, 2026<br>Massachusetts Institute of Technology<br>Cambridge, Massachusetts</p>
                 </div>
                 
                 <div class="col-md-4 mb-4">
@@ -730,10 +797,11 @@
                 <div class="col-md-4">
                     <h3>Stay Connected</h3>
                     <div class="mb-3">
-                        <a href="#" class="social-icon text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#" class="social-icon text-white"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#" class="social-icon text-white"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="social-icon text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://x.com/imranasalis" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61569568473599&sk=about_overview&viewas=100000686899395" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/imrana.salis/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.linkedin.com/in/imrana-salis-a672a333b" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Imrana17" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                     
                     <p>Subscribe to our newsletter for updates</p>
@@ -747,7 +815,7 @@
             <hr class="my-4 bg-light">
             
             <div class="text-center">
-                <p>&copy; 2023 VintageCon. All rights reserved.</p>
+                <p>&copy; 2026 Hackaton. All rights reserved. | In partnership with MIT</p>
             </div>
         </div>
     </footer>
